@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Snake in pure HTML/JavaScript/CSS</title>
+<style>
+    html {
+        text-align: center;
+        font-family: Helvetica, Arial, Helvetica, sans-serif;
+    }
+    #board div {
+    background-color: black;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    float: left;
+    width: 24px;
+    height: 24px;
+    }
+    #board {
+    width: calc(26 * 24px);
+    margin: auto;
+    }
+    #board .snake {
+    background-color: green;
+    }   
+    #board .apple {
+    background-color: red;
+    }
+    .frame-button{
+        width: 600px;
+        height: 40vh;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        position: fixed;
+        bottom: 40px;
+    }
+    @media screen and (max-width: 750px) {
+       .frame-button{
+           display: flex;
+       }
+    }
+    .frame-button button{
+        width: 30vw;
+        height: 15vh;
+        font-size: 50px;
+    }
+</style>
+</head>
+<body onload="initGame()" onkeydown="enterKey(event)">
+    <h1>Simple Snake</h1>
+    <button id="play">Play</button>
+    <div class="best-score">
+        Best score: <span> 0</span>
+    </div>
+    <h1 id="score">0</h1>
+    <div id="board"></div>
+    <div class="frame-button">
+        <div>
+            <button id="left"><</button>
+        </div>
+        <div style='display: flex; flex-direction: column;'>
+            <button id="up">^</button>
+            <button id="down">v</button>
+        </div>
+        <div>
+            <button id="right">></button>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
